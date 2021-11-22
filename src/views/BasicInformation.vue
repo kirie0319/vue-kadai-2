@@ -3,8 +3,8 @@
     <form id="selectDate">
       <p>
         -性別-<br />
-        <input type="radio" name="gender" value="男性" /> 男性
-        <input type="radio" name="gender" value="女性" /> 女性
+        <input type="radio" name="gender" value="male" v-model="gender" /> 男性
+        <input type="radio" name="gender" value="female" v-model="gender" /> 女性
       </p>
       <select v-model="year" @change="get_days">
         <option v-for="n in 50" :key="n" :value="n + 1980">
@@ -30,11 +30,42 @@
 export default {
   data() {
     return {
-      year: 2018,
-      month: 1,
-      day: 1,
       days_max: "",
     };
+  },
+  computed : {
+    gender : {
+      get() {
+        return this.$store.state.gender;
+      },
+      set(value) {
+        this.$store.commit("setGender", value)
+      }
+    },
+    year : {
+      get() {
+        return this.$store.state.year;
+      },
+      set(value) {
+        this.$store.commit("setYear", value)
+      }
+    },
+    month : {
+      get() {
+        return this.$store.state.month;
+      },
+      set(value) {
+        this.$store.commit("setMonth", value)
+      }
+    },
+    day : {
+      get() {
+        return this.$store.state.day;
+      },
+      set(value) {
+        this.$store.commit("setDay", value)
+      }
+    }
   },
   created: function() {
     this.get_days();
