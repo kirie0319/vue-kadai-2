@@ -16,6 +16,38 @@ export default new Vuex.Store({
     question2: false,
     consultContent: ''
   },
+  getters: {
+    gender: state => {
+      return state.gender
+    },
+    year: state => {
+      return state.year
+    },
+    month: state => {
+      return state.month
+    },
+    day: state => {
+      return state.day
+    },
+    lifeInsurance: state => {
+      return state.lifeInsurance
+    },
+    isHospitalized: state => {
+      return state.isHospitalized
+    },
+    wasHospitalized: state => {
+      return state.wasHospitalized
+    },
+    question: state => {
+      return state.question
+    },
+    question2: state => {
+      return state.question2
+    },
+    consultContent: state => {
+      return state.consultContent
+    },
+  },
   mutations: {
     setGender(state, gender) {
       state.gender = gender;
