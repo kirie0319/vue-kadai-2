@@ -6,12 +6,12 @@
         <input type="radio" name="gender" value="male" v-model="gender" /> 男性
         <input type="radio" name="gender" value="female" v-model="gender" /> 女性
       </p>
-      <select v-model="year" @change="get_days">
+      <select v-model="year" @change="getDays">
         <option v-for="n in 50" :key="n" :value="n + 1980">
           {{ n + 1980 }}
         </option> </select
       >年
-      <select v-model="month" @change="get_days">
+      <select v-model="month" @change="getDays">
         <option v-for="n in 12" :key="n" :value="n">
           {{ n }}
         </option> </select
@@ -68,11 +68,11 @@ export default {
     }
   },
   created: function() {
-    this.get_days();
+    this.getDays();
   },
   methods: {
     // 日の最大数を取得
-    get_days: function() {
+    getDays: function() {
       this.days_max = new Date(this.year, this.month, 0).getDate();
     },
   },
