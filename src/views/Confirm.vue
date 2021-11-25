@@ -38,28 +38,28 @@
 export default {
   computed : {
     gender: function() {
-      return this.$store.state.gender
+      return this.$store.getters.gender
     },
     year: function() {
-      return this.$store.state.year
+      return this.$store.getters.year
     },
     month: function() {
-      return this.$store.state.month
+      return this.$store.getters.month
     },
     day: function() {
-      return this.$store.state.day
+      return this.$store.getters.day
     },
     lifeInsurance: function() {
-      return this.$store.state.lifeInsurance
+      return this.$store.getters.lifeInsurance
     },
     isHospitalized: function() {
-      return this.$store.state.isHospitalized
+      return this.$store.getters.isHospitalized
     },
     wasHospitalized: function() {
-      return this.$store.state.wasHospitalized
+      return this.$store.getters.wasHospitalized
     },
     consultContent: function() {
-      return this.$store.state.consultContent
+      return this.$store.getters.consultContent
     },
   }
 }

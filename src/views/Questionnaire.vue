@@ -27,16 +27,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      // question: false,
-      // question2: false,
-    };
-  },
    computed : {
     lifeInsurance : {
       get() {
-        return this.$store.state.lifeInsurance;
+        return this.$store.getters.lifeInsurance;
       },
       set(value) {
         this.$store.commit("setLifeInsurance", value)
@@ -44,7 +38,7 @@ export default {
     },
     isHospitalized : {
       get() {
-        return this.$store.state.isHospitalized;
+        return this.$store.getters.isHospitalized;
       },
       set(value) {
         console.log(value);
@@ -53,17 +47,17 @@ export default {
     },
     wasHospitalized : {
       get() {
-        return this.$store.state.wasHospitalized;
+        return this.$store.getters.wasHospitalized;
       },
       set(value) {
         this.$store.commit("setWasHospitalized", value)
       }
     },
     question : function(){
-      return this.$store.state.question
+      return this.$store.getters.question
     },
     question2 : function(){
-      return this.$store.state.question2
+      return this.$store.getters.question2
     }
   },
   methods: {

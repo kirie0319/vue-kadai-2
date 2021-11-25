@@ -11,7 +11,7 @@
 export default {
   computed : {
     consultContent : function(){
-      return this.$store.state.consultContent
+      return this.$store.getters.consultContent
     }
   },
   data() {

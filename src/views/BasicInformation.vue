@@ -17,7 +17,7 @@
         </option> </select
       >月
       <select v-model="day">
-        <option v-for="n in days_max" :key="n" :value="n">
+        <option v-for="n in daysMax" :key="n" :value="n">
           {{ n }}
         </option> </select
       >日
@@ -30,13 +30,13 @@
 export default {
   data() {
     return {
-      days_max: "",
+      daysMax: "",
     };
   },
   computed : {
     gender : {
       get() {
-        return this.$store.state.gender;
+        return this.$store.getters.gender;
       },
       set(value) {
         this.$store.commit("setGender", value)
@@ -44,7 +44,7 @@ export default {
     },
     year : {
       get() {
-        return this.$store.state.year;
+        return this.$store.getters.year;
       },
       set(value) {
         this.$store.commit("setYear", value)
@@ -52,7 +52,7 @@ export default {
     },
     month : {
       get() {
-        return this.$store.state.month;
+        return this.$store.getters.month;
       },
       set(value) {
         this.$store.commit("setMonth", value)
@@ -60,7 +60,7 @@ export default {
     },
     day : {
       get() {
-        return this.$store.state.day;
+        return this.$store.getters.day;
       },
       set(value) {
         this.$store.commit("setDay", value)
@@ -73,7 +73,7 @@ export default {
   methods: {
     // 日の最大数を取得
     getDays: function() {
-      this.days_max = new Date(this.year, this.month, 0).getDate();
+      this.daysMax = new Date(this.year, this.month, 0).getDate();
     },
   },
 };
